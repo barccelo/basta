@@ -34,9 +34,10 @@ function tickSound(){
   try{
     audio??=new(window.AudioContext||window.webkitAudioContext)();audio.resume();
     const o=audio.createOscillator(),g=audio.createGain(),t=audio.currentTime;
-    o.type='triangle';o.frequency.setValueAtTime(1700,t);o.frequency.exponentialRampToValueAtTime(550,t+.025);
-    g.gain.setValueAtTime(.001,t);g.gain.exponentialRampToValueAtTime(.3*Math.min(100,Number(cfg.tickVolume))/100,t+.0015);g.gain.exponentialRampToValueAtTime(.001,t+.035);
-    o.connect(g);g.connect(audio.destination);o.onended=()=>{o.disconnect();g.disconnect()};o.start(t);o.stop(t+.04);
+    o.type='sine';o.frequency.value=450;
+    g.gain.setValueAtTime(.12*Math.min(100,Number(cfg.tickVolume))/55,t);
+    g.gain.exponentialRampToValueAtTime(.001,t+.07);
+    o.connect(g);g.connect(audio.destination);o.onended=()=>{o.disconnect();g.disconnect()};o.start(t);o.stop(t+.07);
   }catch{}
 }
 function updateTicking(now){
