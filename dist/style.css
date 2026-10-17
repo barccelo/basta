@@ -13,3 +13,5 @@ body[data-theme=classic]{background:#fff7f5}body[data-theme=classic] .brand{colo
 .primary,.secondary,.icon,.close,.pause-actions button{transition:transform .12s,filter .12s}.primary:active,.secondary:active,.icon:active,.close:active,.pause-actions button:active{transform:scale(.98);filter:brightness(.97)}
 dialog[open]{animation:dialog-appear .16s cubic-bezier(.2,.8,.2,1)}@keyframes dialog-appear{from{opacity:0;transform:translateY(6px) scale(.985)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){dialog[open]{animation:none}.primary,.secondary,.icon,.close,.pause-actions button{transition:none}}
+
+.tick-settings{padding:0 0 5px}.tick-settings label{display:flex;justify-content:space-between;align-items:center;gap:12px}#tickVolumeValue{font-variant-numeric:tabular-nums;color:#8e8e93;font-weight:400}#tickVolume{width:100%;height:28px;margin:0;accent-color:var(--blue);cursor:pointer;touch-action:pan-x}
